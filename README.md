@@ -33,7 +33,7 @@ git clone https://github.com/NourAlaassarr/Task-Manager.git
 ### 2. Install dependencies:
 
 ```bash
-cd task-manager-app
+cd Task-Manager
 npm init
 ```
 
