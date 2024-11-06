@@ -27,14 +27,14 @@ The application is built using **Node.js**, **Express**, and **MongoDB**, follow
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/task-manager-app.git
+git clone https://github.com/NourAlaassarr/Task-Manager.git
 ```
 
 ### 2. Install dependencies:
 
 ```bash
 cd task-manager-app
-npm install
+npm init
 ```
 
 ### 3. Set up your environment variables:
