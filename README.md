@@ -87,16 +87,18 @@ The application will be running on `http://localhost:5000`.
   Log out a user by Setting Status to Offline.
   - Response: 200 OK with a message confirming the logout.
 
-**  GET /ConfirmEmail/:Token** 
+-**GET /ConfirmEmail/:Token** 
  Confirms a user's email using a provided token.
 Response:
 200 OK: A message indicating that the email has been successfully confirmed.
-Example Response:
-json
-Copy code
-{
-  "message": "Email successfully confirmed."
-}
+- Response:
+   ```json
+    [
+      {
+       "message": "Email successfully confirmed."
+      }
+    ]
+    ```
 ### Task Management
 
 - **GET /Task/**  
