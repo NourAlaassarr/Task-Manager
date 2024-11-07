@@ -120,7 +120,7 @@ The application will be running on `http://localhost:5000`.
   - Request Body:
     ```json
     {
-      "Status": Completed
+      "Status": completed
     }
     ```
   - Response: 200 OK with updated task data.
