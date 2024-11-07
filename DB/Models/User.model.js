@@ -25,7 +25,7 @@ const UserSchema = new Schema({
         default: SystemRoles.User
     },
 
-    isConfirmed: {
+    IsConfirmed: {
         type: Boolean,
         default: false
     },

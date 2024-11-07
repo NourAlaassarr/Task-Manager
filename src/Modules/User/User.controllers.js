@@ -1,11 +1,11 @@
 import { UserModel } from "../../../DB/Models/User.model.js"
 
 import pkg from 'bcrypt'
-import { GenerateToken } from "../../Utilis/TokenFunction.js";
+import { GenerateToken, verifyToken} from "../../Utilis/TokenFunction.js";
 import {SendEmailService} from '../../Service/SendEmailService.js'
 import { emailTemplate } from "../../Utilis/EmailTemplate.js";
 import { SystemRoles } from "../../Utilis/System.Roles.js";
-import escapeHTML from "escape-html";
+
 
 //Sign up
 export const SignUp = async (req, res, next) => {
@@ -99,6 +99,22 @@ export const SignOut = async (req,res,next)=>{
     res.status(200).json({Message:'Logged Out Successfuly'});
 }
 
+//Confirm Email
+export const ConfirmEmail = async(req,res,next)=>{
+    const{Token}=req.params;
+    
+    let DecodedToken = verifyToken({token:Token, signature:process.env.CONFIRM_EMAIL_TOKEN});
+   
+    const Isconfirmcheck = await UserModel.findOne({Email:DecodedToken.payload.Email});
+    if(Isconfirmcheck.IsConfirmed==true){
+        return res.status(400).json({Message:'Already Confirmed'});
+    }
+    const CheckDecoded = await UserModel.findOneAndUpdate({Email:DecodedToken.Email,IsConfirmed:true});
+    
+    return res.status(200).json({Message:'Success'});
+    
+
+}
 
 
 

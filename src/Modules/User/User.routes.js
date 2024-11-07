@@ -14,5 +14,6 @@ router.post('/SignIn',ValidationCoreFunction(UserValidation.SignIn),AsyncHandler
 
 //signOut
 router.patch('/SignOut',IsAuth(), ValidationCoreFunction(UserValidation.SignOut),AsyncHandler(UserControllers.SignOut));
-
+//Confirm Email
+router.get('/ConfirmEmail/:Token',AsyncHandler(UserControllers.ConfirmEmail));
 export default router
