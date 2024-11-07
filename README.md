@@ -6,6 +6,8 @@
 The Task Manager application is a simple and effective tool for managing tasks. It allows users to perform CRUD (Create, Read, Update, Delete) operations on tasks. Users can mark tasks as completed or incomplete, filter tasks by their status, and manage their own tasks with user authentication (sign up and login).
 
 The application is built using **Node.js**, **Express**, and **MongoDB**, following best practices for RESTful API development. It uses JWT for secure authentication and data validation with Joi.
+## Api documentation:
+-https://documenter.getpostman.com/view/25141116/2sAY518L48
 
 ## Features
 
