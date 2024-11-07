@@ -39,20 +39,19 @@ npm init
 
 ### 3. Set up your environment variables:
 
-- Create a `.env` file in the root directory.
 - Add your MongoDB connection URL and any other required variables (e.g., JWT secret).
   
-Example `.env` file:
+Example `Config/config.env` file:
 
-```env
-MONGODB_URI=mongodb://localhost:27017/task-manager
-JWT_SECRET=your_secret_key
+```config.env
+DB_CONNECTION_URL_LOCAL="mongodb://127.0.0.1:27017/TaskManager"
+
 ```
 
 ### 4. Run the server:
 
 ```bash
-npm start
+nodemon
 ```
 
 The application will be running on `http://localhost:5000`.
@@ -116,8 +115,8 @@ The application will be running on `http://localhost:5000`.
     ```
   - Response: 201 Created with the task data.
 
-- **PUT /Task/:taskId**  
-  Update an existing task (e.g., mark as completed).
+- **PUT /Task/:TaskId**  
+  Update an existing task (e.g., mark as completed). or Update Title-Description-DeadLine
   - Request Body:
     ```json
     {
@@ -126,7 +125,7 @@ The application will be running on `http://localhost:5000`.
     ```
   - Response: 200 OK with updated task data.
 
-- **DELETE /Task/:taskId**  
+- **DELETE /Task/:TaskId**  
   Delete a task.
   - Response: 200 OK with a message indicating the task was deleted.
 
@@ -137,8 +136,10 @@ The application will be running on `http://localhost:5000`.
     [
       {
         "id": "task_id",
-        "description": "Task description",
-        "completed": false
+        "Title:"Title",
+        "Description": "Task description",
+        "DeadLine": "2024-11-07T22:00:00.000Z"
+        "Status": "completed"
       }
     ]
     ```
