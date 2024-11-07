@@ -93,11 +93,11 @@ Response:
 200 OK: A message indicating that the email has been successfully confirmed.
 - Response:
    ```json
-    [
+   
       {
        "message": "Email successfully confirmed."
       }
-    ]
+    
     ```
 ### Task Management
 
