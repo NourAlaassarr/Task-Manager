@@ -21,5 +21,5 @@ router.put('/:TaskId',IsAuth(),ValidationCoreFunction(TaskValidation.UpdateTask)
 router.get('/GetAll',IsAuth(),AsyncHandler(TaskControllers.GetAlltasks));
 
 //FIlter Status
-router.get('/',IsAuth(),AsyncHandler(TaskControllers.listTasks))
+router.get('/',IsAuth(), ValidationCoreFunction(TaskValidation.querySchema),AsyncHandler(TaskControllers.listTasks))
 export default router

@@ -42,16 +42,17 @@ export const Delete = {
     }).options({ allowUnknown: true })
 };
 
-// export const querySchema = {
-// query:Joi.object({
-//     filter: Joi.string().optional(),
-//     page: Joi.number().integer().min(1).default(1),
-//     limit: Joi.number().integer().min(1).max(100).default(10),
-//     sort: Joi.string().valid('asc', 'desc').optional(),
-//     search: Joi.string().optional(),
-//     fields: Joi.string().optional(),
-//   }),
-//   headers: Joi.object({
-//     token: Joi.string().required()
-// }).options({ allowUnknown: true })
-// }
+export const querySchema = {
+query:Joi.object({
+    filter: Joi.string().optional(),
+    page: Joi.number().integer().min(1).default(1),
+    limit: Joi.number().integer().min(1).max(100).default(10),
+    sort: Joi.string().valid('asc', 'desc').optional(),
+    search: Joi.string().optional(),
+    fields: Joi.string().optional(),
+    Status: Joi.string().valid('completed', 'incomplete').optional(),
+  }),
+  headers: Joi.object({
+    token: Joi.string().required()
+}).options({ allowUnknown: true })
+}
