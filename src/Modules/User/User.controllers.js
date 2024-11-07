@@ -99,13 +99,6 @@ export const SignOut = async (req,res,next)=>{
     res.status(200).json({Message:'Logged Out Successfuly'});
 }
 
-//ConfirmEmail
-
-
-//forgetPass
-
-
-//resetPass
 
 
 

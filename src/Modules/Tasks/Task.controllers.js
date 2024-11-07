@@ -39,7 +39,7 @@ export const AddTask = async (req, res, next) => {
         DeadLine
     });
     await TaskModel.create(TaskObj);
-    res.status(200).json({ Message: 'Successfully Added' })
+    res.status(201).json({ Message: 'Successfully Added' })
 }
 
 //Delete
@@ -154,7 +154,7 @@ res.status(200).json({Message:'Success',Tasks})
 }
 
 
-//Filter by Complete - incomplete
+//Get All tasks with Filter option  Status ->Completed or incomplete
 export const listTasks = async (req, res, next) => {
     const userId = req.AuthUser._id;
   
